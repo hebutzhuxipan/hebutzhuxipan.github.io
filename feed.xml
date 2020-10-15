@@ -6,16 +6,7 @@
     <description>Recent content on Hugo PacMan Theme Demo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 15 Oct 2020 11:07:41 +0800</lastBuildDate><atom:link href="https://hebutzhuxipan.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Filename</title>
-      <link>https://hebutzhuxipan.github.io/post/filename/</link>
-      <pubDate>Thu, 15 Oct 2020 11:07:41 +0800</pubDate>
-      
-      <guid>https://hebutzhuxipan.github.io/post/filename/</guid>
-      <description></description>
-    </item>
-    
+    <lastBuildDate>Wed, 14 Oct 2020 20:18:55 +0800</lastBuildDate><atom:link href="https://hebutzhuxipan.github.io/feed.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Filename</title>
       <link>https://hebutzhuxipan.github.io/post/second/</link>
@@ -31,7 +22,7 @@
       <pubDate>Wed, 14 Oct 2020 19:49:21 +0800</pubDate>
       
       <guid>https://hebutzhuxipan.github.io/post/first/</guid>
-      <description>Hello Hugo！测试内容</description>
+      <description>Hello Hugo！测试内容11111111111111111111111</description>
     </item>
     
   </channel>
