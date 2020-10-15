@@ -10,9 +10,7 @@
   <meta itemprop="name" content="First - Hugo PacMan Theme Demo">
   <meta itemprop="description" content="Hello Hugo！测试内容11111111111111111111111">
   <meta itemprop="image" content="https://hebutzhuxipan.github.io/img/author.jpg">
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:site" content="@coderzh" />
-  <meta name="twitter:title" content="First - Hugo PacMan Theme Demo" />
+  
   
   <meta name="twitter:description" content="">
   
@@ -35,22 +33,18 @@
   </div>
   <div id="textlogo">
     <h1 class="site-name"><a href="https://hebutzhuxipan.github.io/" title="Hugo PacMan Theme Demo">Hugo PacMan Theme Demo</a></h1>
-    <h2 class="blog-motto">subtitle</h2>
+    <h2 class="blog-motto">awesome!</h2>
   </div>
   <div class="navbar"><a class="navbutton navmobile" href="#" title="menu"></a></div>
   <nav class="animated">
     <ul>
       
-      
-      <li><a href="/">首页</a></li>
-      
-      <li><a href="/about">关于</a></li>
-      
+      <li><a href="/">Home</a></li>
       
       <li>
         <form class="search" method="get" action="https://www.google.com/search">
           <div>
-            <input type="text" id="search" name="q" placeholder='搜索'>
+            <input type="text" id="search" name="q" placeholder='Search'>
           </div>
         </form>
       </li>
@@ -68,11 +62,11 @@
   </h1>
   <p class="article-author">By
     
-      <a href="https://blog.coderzh.com" title="">you</a>
+      <a href="" title="">you</a>
     
   </p>
   <p class="article-time">
-    <time datetime="2020-10-14 19:49:21 &#43;0800 CST" itemprop="datePublished">2020年10月14日</time>
+    <time datetime="2020-10-14 19:49:21 &#43;0800 CST" itemprop="datePublished">2020-10-14</time>
   </p>
 </header>
 
@@ -88,7 +82,7 @@
 
 
   <div class="article-share" id="share">
-    <div data-url="https://hebutzhuxipan.github.io/post/first/" data-title="First" data-tsina="1816308191" class="share clearfix">
+    <div data-url="https://hebutzhuxipan.github.io/post/first/" data-title="First" data-tsina="" class="share clearfix">
     </div>
   </div>
 </footer>
@@ -97,45 +91,12 @@
   
 
 
-<section class="comment">
-<div id="disqus_thread"></div>
-</section>
-<script>
-  <!-- detect whether Disuqs can load -->
-  var xhr = new XMLHttpRequest();
-  xhr.open('GET', '//disqus.com/next/config.json?' + new Date().getTime(), true);
-  xhr.timeout = 3000; 
-
-  xhr.onload = function() { 
-
-
-var disqus_config = function () {
-this.page.url = "https://hebutzhuxipan.github.io/post/first/";
-this.page.identifier = "https://hebutzhuxipan.github.io/post/first/";
-};
-(function() { 
-var d = document, s = d.createElement('script');
-
-s.src = '//coderzh.disqus.com/embed.js';
-
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
-})();
-}
-  xhr.ontimeout = function() {
-  <!-- cannot load Disqus, skip it. -->
-  return;
-}
-xhr.send(null);
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-
 
 </div>
 
-    <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+    <div class="openaside"><a class="navbutton" href="#" title=""></a></div>
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title=""></a></div>
 <aside class="clearfix">
   
 
@@ -147,7 +108,7 @@ xhr.send(null);
 
   
   <div class="archiveslist">
-    <p class="asidetitle">归档</p>
+    <p class="asidetitle">Archives</p>
     <ul class="archive-list">
       
       
@@ -177,7 +138,7 @@ xhr.send(null);
     <div style='background:no-repeat url("https://hebutzhuxipan.github.io/img/author.jpg") left top;-webkit-background-size:6.875em 6.875em;-moz-background-size:6.875em 6.875em;background-size:6.875em 6.875em;' class="author" ></div>
   </div>
   <section class="info">
-    <p>Introduce1 <br/> Introduce2</p>
+    <p></p>
   </section>
   <div class="social-font clearfix">
     <a href='http://weibo.com/coderzh' target="_blank" title="weibo"></a>
@@ -308,27 +269,6 @@ $(document).ready(function(){
 });
 </script>
 
-
-<link rel="stylesheet" href="https://hebutzhuxipan.github.io/fancybox/jquery.fancybox.css" media="screen" type="text/css">
-<script src="https://hebutzhuxipan.github.io/fancybox/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){
-  $('.article-content').each(function(i){
-    $(this).find('img').each(function(){
-      if ($(this).parent().hasClass('fancybox')) return;
-      var alt = this.alt;
-      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
-      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
-    });
-    $(this).find('.fancybox').each(function(){
-      $(this).attr('rel', 'article' + i);
-    });
-  });
-  if($.fancybox){
-    $('.fancybox').fancybox();
-  }
-});
-</script>
 
 
 
