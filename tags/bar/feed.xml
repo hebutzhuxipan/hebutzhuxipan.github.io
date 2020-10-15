@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on 猪哥的小被子</title>
-    <link>https://hebutzhuxipan.github.io/post/</link>
-    <description>Recent content in Posts on 猪哥的小被子</description>
+    <title>Bar on 猪哥的小被子</title>
+    <link>https://hebutzhuxipan.github.io/tags/bar/</link>
+    <description>Recent content in Bar on 猪哥的小被子</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 20 Mar 2016 12:13:19 +0800</lastBuildDate><atom:link href="https://hebutzhuxipan.github.io/post/feed.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Mar 2016 12:13:19 +0800</lastBuildDate><atom:link href="https://hebutzhuxipan.github.io/tags/bar/feed.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>first</title>
       <link>https://hebutzhuxipan.github.io/post/first/</link>
