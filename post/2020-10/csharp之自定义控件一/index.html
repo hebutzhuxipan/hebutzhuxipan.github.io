@@ -2,20 +2,20 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>思考感悟 - 猪哥的小被子</title>
+  <title>CSharp之自定义控件（一） - 猪哥的小被子</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
   
-  <meta name="description" content="思考感悟">
+  <meta name="description" content="[TOC] 为什么要自定义控件？ 常用组合控件的集成目的 单独控件的界面丰富化 归根结底是要模块化，达到一致性要求，提高开发效率 “一次开发，永久受益” 下面简">
   
-  <meta itemprop="name" content="思考感悟 - 猪哥的小被子">
-  <meta itemprop="description" content="思考感悟">
+  <meta itemprop="name" content="CSharp之自定义控件（一） - 猪哥的小被子">
+  <meta itemprop="description" content="[TOC] 为什么要自定义控件？ 常用组合控件的集成目的 单独控件的界面丰富化 归根结底是要模块化，达到一致性要求，提高开发效率 “一次开发，永久受益” 下面简">
   <meta itemprop="image" content="https://hebutzhuxipan.github.io/img/author.jpg">
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@coderzh" />
-  <meta name="twitter:title" content="思考感悟 - 猪哥的小被子" />
+  <meta name="twitter:title" content="CSharp之自定义控件（一） - 猪哥的小被子" />
   
   <meta name="twitter:description" content="">
-  <link rel="alternate" href="https://hebutzhuxipan.github.io/feed.xml" title="猪哥的小被子" type="application/rss+xml"/>
+  
   <link rel="shortcut icon" href="https://hebutzhuxipan.github.io/img/favicon.ico"/>
   <link rel="apple-touch-icon" href="https://hebutzhuxipan.github.io/apple-touch-icon.png" />
   <link rel="apple-touch-icon-precomposed" href="https://hebutzhuxipan.github.io/apple-touch-icon.png" />
@@ -60,21 +60,171 @@
 
   </header>
   <div id="container">
-    <div id="main">
-      
-      <h2 id="2016-02">2016-02</h2>
-      
-      <section class="post" itemscope itemprop="blogPost">
-    <a href="https://hebutzhuxipan.github.io/post/hello-hugo/" title="hello hugo" itemprop="url">
-    <h1 itemprop="name">hello hugo</h1>
-    <p itemprop="description">Hello Hugo Balalala&hellip; Balalala&hellip; Balalala&hellip;</p>
-    <time datetime="2016-02-20 15:34:05 &#43;0800 CST" itemprop="datePublished">2016年02月20日</time>
-  </a>
-</section>
+    <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody">
+    <header class="article-info clearfix">
+  <h1 itemprop="name">
+      <a href="https://hebutzhuxipan.github.io/post/2020-10/csharp%E4%B9%8B%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8E%A7%E4%BB%B6%E4%B8%80/" title="CSharp之自定义控件（一）" itemprop="url">CSharp之自定义控件（一）</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="https://blog.coderzh.com" title="">you</a>
+    
+  </p>
+  <p class="article-time">
+    <time datetime="2020-10-20 15:34:05 &#43;0800 CST" itemprop="datePublished">2020年10月20日</time>
+  </p>
+</header>
 
-      
-      
+	<div class="article-content">
+    
+		<div class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#新建工程">新建工程</a></li>
+        <li><a href="#添加属性">添加属性</a></li>
+        <li><a href="#添加事件">添加事件</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+		</div>
+    
+    <p>[TOC]</p>
+<p>为什么要自定义控件？</p>
+<ol>
+<li>常用组合控件的集成目的</li>
+<li>单独控件的界面丰富化</li>
+<li>归根结底是要模块化，达到一致性要求，提高开发效率</li>
+<li>“一次开发，永久受益”</li>
+</ol>
+<p>下面简单描述下开发过程，及相关概念过程：</p>
+<h3 id="新建工程">新建工程</h3>
+<p>步骤：新建项目&ndash;&gt;Windows窗体控件库</p>
+<p>如图，当建立完成控件库项目，就可右键添加“用户控件”了。</p>
+<h3 id="添加属性">添加属性</h3>
+<p>在自定义控件中，通常需要自定义属性。</p>
+<ol>
+<li>创建变量</li>
+<li>创建变量对应的属性，在属性上添加 ++属性特性++</li>
+<li>以上完成，就可以在属性中看到</li>
+</ol>
+<p>例如：</p>
+<pre><code>#region 基本变量
+    private byte rowNum;
+    private byte columnNum;
+    [Description(&quot;(自定义控件)行数量&quot;)]
+    public byte RowNum_ { 
+        get
+        {
+            return rowNum;
+        }
+        set
+        {
+            rowNum = value;
+        }
+    }
+    [Description(&quot;(自定义控件)列数量&quot;)]
+    public byte ColumnNum_
+    {
+        get
+        {
+            return columnNum;
+        }
+        set
+        {
+            columnNum = value;
+        }
+    }
+#endregion
+</code></pre><h3 id="添加事件">添加事件</h3>
+<p>有时候需要给自定义控件，增加event。</p>
+<ol>
+<li>定义委托事件或使用已有事件</li>
+<li>定义委托或事件函数（用public，此会显示到 ++控件事件++ 中）</li>
+<li>调用以上定义</li>
+</ol>
+<p>例如：</p>
+<pre><code>    /// &lt;summary&gt;
+    /// 项点击事件
+    /// &lt;/summary&gt;
+    [Description(&quot;项点击事件&quot;), Category(&quot;自定义&quot;)]
+    public event DataGridViewEventHandler ItemClick;
+</code></pre>
+    
+	</div>
+  <footer class="article-footer clearfix">
+  
+
+<div class="article-tags">
+  <span></span>
+  
+  <a href="https://hebutzhuxipan.github.io/tags/c">C#</a>
+  
+</div>
+
+
+
+
+
+<div class="article-categories">
+  <span></span>
+  
+  <a class="article-category-link" href="https://hebutzhuxipan.github.io/categories/c">C#</a>
+  
+</div>
+
+
+
+  <div class="article-share" id="share">
+    <div data-url="https://hebutzhuxipan.github.io/post/2020-10/csharp%E4%B9%8B%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8E%A7%E4%BB%B6%E4%B8%80/" data-title="CSharp之自定义控件（一）" data-tsina="1816308191" class="share clearfix">
     </div>
+  </div>
+</footer>
+
+	</article>
+  
+
+
+<section class="comment">
+<div id="disqus_thread"></div>
+</section>
+<script>
+  <!-- detect whether Disuqs can load -->
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', '//disqus.com/next/config.json?' + new Date().getTime(), true);
+  xhr.timeout = 3000; 
+
+  xhr.onload = function() { 
+
+
+var disqus_config = function () {
+this.page.url = "https://hebutzhuxipan.github.io/post/2020-10/csharp%E4%B9%8B%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8E%A7%E4%BB%B6%E4%B8%80/";
+this.page.identifier = "https://hebutzhuxipan.github.io/post/2020-10/csharp%E4%B9%8B%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8E%A7%E4%BB%B6%E4%B8%80/";
+};
+(function() { 
+var d = document, s = d.createElement('script');
+
+s.src = '//coderzh.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+}
+  xhr.ontimeout = function() {
+  <!-- cannot load Disqus, skip it. -->
+  return;
+}
+xhr.send(null);
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+</div>
+
     <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
 <div id="asidepart">
 <div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
@@ -238,6 +388,38 @@ $(document).ready(function(){
 
 <script type="text/javascript">
 $(document).ready(function(){
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){
   var $this = $('.share'),
       url = $this.attr('data-url'),
       encodedUrl = encodeURIComponent(url),
@@ -264,6 +446,27 @@ $(document).ready(function(){
 });
 </script>
 
+
+<link rel="stylesheet" href="https://hebutzhuxipan.github.io/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="https://hebutzhuxipan.github.io/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+});
+</script>
 
 
 
